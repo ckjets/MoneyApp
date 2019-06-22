@@ -1,10 +1,11 @@
 echo -------------------------------------------------
 echo
-echo                ファイアウォール 無効化
+echo                ファイアウォール 設定
 echo
 echo -------------------------------------------------
 
-systemctl disable firewalld
+firewall-cmd --add-service=http --zone=public --permanent
+firewall-cmd --reload
 
 echo -------------------------------------------------
 echo
