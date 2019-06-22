@@ -11,6 +11,14 @@ $ vagrant plugin list
 vagrant-vbguest (0.18.0, global)
 ```
 
+以下ホストOSで実行
+```
+sudo vi /etc/hosts
+
+# 以下追加
+192.168.33.10 www.moneyapp.com
+```
+
 ```bash:
 $ git clone https://github.com/ckjets/MoneyApp.git
 $ cd MoneyApp
@@ -18,4 +26,5 @@ $ vagrant up
 $ vagrant ssh
 ```
 
-http://192.168.33.10
+- IP: http://192.168.33.10
+- ドメイン: http://www.moneyapp.com
