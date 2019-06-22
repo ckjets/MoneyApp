@@ -4,6 +4,7 @@ echo                ファイアウォール 設定
 echo
 echo -------------------------------------------------
 
+systemctl start firewalld
 firewall-cmd --add-service=http --zone=public --permanent
 firewall-cmd --reload
 
