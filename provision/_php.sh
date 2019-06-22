@@ -1,5 +1,9 @@
-# PHP(7.3)
-echo --INSTALL PHP--
+echo -------------------------------------------------
+echo
+echo                PHP7.3
+echo
+echo -------------------------------------------------
+
 yum -y install epel-release
 yum -y install http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
 yum -y install --disablerepo=* --enablerepo=epel libargon2
@@ -8,8 +12,12 @@ yum -y install zip unzip git
 
 chgrp -R vagrant /var/lib/php
 
-# apache起動
-echo --START APACHE SERVER--
+echo -------------------------------------------------
+echo
+echo                Apache 起動
+echo
+echo -------------------------------------------------
+
 cp $BASE_DIR/apache/cake.conf /etc/httpd/conf.d
 systemctl start httpd
 systemctl enable httpd
