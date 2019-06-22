@@ -15,7 +15,7 @@ class SpendingController extends Controller
 
     public function index()
     {
-        $this->set('spendings', $this->paginate());
+        $this->set('spendings', $this->paginate($this->Spending->find('all')));
 
         $this->set('entity', $this->Spending->newEntity());
     }
@@ -30,7 +30,6 @@ class SpendingController extends Controller
                 $this->redirect(['action' => 'index']);
             }
 
-            pr($spending);
             $this->set('entity', $spending);
         }
     }

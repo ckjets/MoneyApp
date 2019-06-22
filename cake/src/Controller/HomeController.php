@@ -14,13 +14,13 @@ class HomeController extends Controller
     public function index()
     {
 
+        //$this->Incomes = TableRegistry::get('incomes');
         $incomes = TableRegistry::get('incomes');
+        //$query =  $this->Incomes->find('all');
+        $query = $incomes->find('all');
 
-        $incomes = $incomes->find()->all();
-        // $incomes
-        //     ->select(['price' =>  $incomes->func()->sum('price')])
-        //     ->all();
+        $results = $query->all();
+        $this->set('incomes',$results);
 
-        $this->set('incomes',$incomes);
     }
 }

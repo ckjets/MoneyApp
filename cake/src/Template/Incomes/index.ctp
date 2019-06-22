@@ -5,7 +5,6 @@
         
     }
 </style>
-<?php echo $this->Flash->render(); ?>
 
 <h1>収入を記録する</h1>
 <br>
