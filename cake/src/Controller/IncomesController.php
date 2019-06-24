@@ -5,7 +5,6 @@ namespace App\Controller;
 use Cake\Controller\Controller;
 use Cake\Event\Event;
 use Cake\ORM\TableRegistry;
-use Cake\Routing\Router;
 
 class IncomesController extends Controller
 {

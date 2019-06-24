@@ -9,18 +9,32 @@ class HomeController extends Controller
 {
 
     public function initialize()
-    { }
+    { 
+
+    }
 
     public function index()
     {
+        //出力は最後の行だけとれる
+        // $query = TableRegistry::get('Incomes')->find();
 
-        //$this->Incomes = TableRegistry::get('incomes');
-        $incomes = TableRegistry::get('incomes');
-        //$query =  $this->Incomes->find('all');
-        $query = $incomes->find('all');
 
-        $results = $query->all();
-        $this->set('incomes',$results);
+        // $incomes = [];
+        // foreach ($query as $income) {
+        //     debug($income->price);
+        //     $incomes = $income['price'];
+        // }
+
+        // $this->set('incomes',$incomes);
+
+        $query = TableRegistry::get('Incomes')->find();
+        $results = $query->select(['price']);
+
+        $this->set('results',$results);
+
+
+
+
 
     }
 }
