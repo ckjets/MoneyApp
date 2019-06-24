@@ -5,7 +5,6 @@ namespace App\Controller;
 use Cake\Controller\Controller;
 use Cake\Event\Event;
 use Cake\ORM\TableRegistry;
-use Cake\Routing\Router;
 
 class IncomesController extends Controller
 {
@@ -14,11 +13,11 @@ class IncomesController extends Controller
     public function initialize()
     {
         parent::initialize();
-        $this->loadComponent('Flash');
+        // $this->loadComponent('Flash');
 
 
     }
-    public $components = array ('Flash');
+    // public $components = array ('Flash');
     
     public function index()
     {
@@ -42,11 +41,11 @@ class IncomesController extends Controller
 
             if ($this->Incomes->save($income)) {
 
-                $this->Flash->success(__('収入が保存されました。',['element'=>'flash']));
+                // $this->Flash->success(__('収入が保存されました。',['element'=>'flash']));
 
                 $this->redirect(['action' => 'index']);
             } else {
-                $this->Flash->error(__('投稿エラー'));
+                // $this->Flash->error(__('投稿エラー'));
             }
 
             $this->set('entity', $income);

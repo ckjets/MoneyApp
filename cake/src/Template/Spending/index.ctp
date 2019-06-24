@@ -15,14 +15,14 @@
     <img src="../img/spending.png" alt="">
 </div>
 
-<?= $this->Form->create($entity,['action' => 'add']); ?>
+<?= $this->Form->create($entity,['url'=>['action'=>'add']]); ?>
     <div class="row">
         <div class="col">
         <?= $this->Form->label('収入日付') ?>
         <input type="date" name="date" required="required">
         </div>
         <div class="col">
-            <?= $this->Form->control('price', ['placeholder' => '支出額']); ?>
+            <?= $this->Form->control('price', ['label' => '支出額']); ?>
         </div>
         <div class="col">
             <?= $this->Form->label('用途') ?>
@@ -30,7 +30,7 @@
 
         </div>
         <div class="col">
-            <?= $this->Form->button('支出を記録', ['class' => 'btn btn-outline-primary mt-4']); ?>
+          <button type="submit" class="btn btn-outline-primary" style="margin-top:30px;">支出を記録</button>
         </div>
     </div>
 <?= $this->Form->end(); ?>
