@@ -15,22 +15,24 @@ class HomeController extends Controller
 
     public function index()
     {
-        //出力は最後の行だけとれる
-        // $query = TableRegistry::get('Incomes')->find();
 
-
-        // $incomes = [];
-        // foreach ($query as $income) {
-        //     debug($income->price);
-        //     $incomes = $income['price'];
-        // }
-
-        // $this->set('incomes',$incomes);
-
+        //収入のトータル
         $query = TableRegistry::get('Incomes')->find();
-        $results = $query->select(['price']);
+        $incomes = $query->select(['sum' => $query->func()->sum('price')]);
 
-        $this->set('results',$results);
+        foreach($incomes as $income){
+            $income = $income['sum'];
+        }
+        $this->set('income',$income);
+
+        //支出のトータル
+        $query = TableRegistry::get('Spending')->find();
+        $spendings = $query->select(['sum' => $query->func()->sum('price')]);
+
+        foreach($spendings as $spending){
+            $spending = $spending['sum'];
+        }
+        $this->set('spending',$spending);
 
 
 
