@@ -16,14 +16,14 @@
 <table class="table table-bordered">
   <tbody>
     <tr>
-      <th class="table-warning" scope="row"><h2>収入トータル</h2></th>
-      <td><h2>￥<?php echo $income ?></h2></td>
+      <th class="table-warning" scope="row"><h4>収入トータル</h4></th>
+      <td><h4>￥<?= number_format($income) ?></h4></td>
     </tr>
-    <th class="table-warning" scope="row"><h2>支出トータル</h2></th>
-      <td><h2>￥<?php echo $spending ?></h2></td>
+    <th class="table-warning" scope="row"><h4>支出トータル</h4></th>
+      <td><h4>￥<?= number_format($spending) ?></h4></td>
     </tr>
-    <th class="table-warning" scope="row"><h2>収支合計</h2></th>
-      <td><h2>￥<?= $income-$spending ?></h2></td>
+    <th class="table-warning" scope="row"><h4>収支合計</h4></th>
+      <td><h4>￥<?= number_format($income-$spending) ?></h4></td>
     </tr>
   </tbody>
 </table>
