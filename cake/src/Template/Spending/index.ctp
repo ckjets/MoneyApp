@@ -51,7 +51,7 @@
                 <tr>
                     <td><?= $spending->id ?></td>
                     <td><?= h($spending->date) ?></td>
-                    <td>￥<?= h($spending->price) ?></td>
+                    <td>￥<?= number_format($spending->price) ?></td>
                     <td><?= h($spending->description) ?></td>
                 </tr>
             <?php endforeach; ?>

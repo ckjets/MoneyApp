@@ -20,7 +20,7 @@
         <input type="date" name="date" required="required">
         </div>
         <div class="col">
-        <?= $this->Form->control('price', ['placeholder' => '10,000','label'=>'収入額']); ?>
+        <?= $this->Form->control('price', ['label'=>'収入額']); ?>
         </div>
 
         <div class="col">
@@ -43,10 +43,11 @@
     <table class="table table-hover">
         <thead>
             <tr>
-                <th scope="col">#</th>
-                <th scope="col">日付</th>
-                <th scope="col">収入額</th>
-                <th scope="col">収入理由</th>
+                <th  scope="col">#</th>
+                <th  scope="col">日付</th>
+                <th  scope="col">収入額</th>
+                <th  scope="col">収入理由</th>
+                <th  scope="col">編集&nbsp;/&nbsp;削除</th>
             </tr>
         </thead>
         <tbody>
@@ -54,10 +55,23 @@
                 <tr>
                     <td><?=h($income->id) ?></td>
                     <td><?=h($income->date) ?></td>
-                    <td>￥<?=h($income->price) ?></td>
+                    <td>￥<?=number_format($income->price) ?></td>
                     <td>
                         <?=h($income->reason->name) ?>
-                </td>
+                    </td>
+                    
+                    <td>
+                    <div class="row">
+                    <?= $this->Form->create($entity,['url'=>['action'=>'edit']]) ?>
+                    <button type="submit" class="btn btn-warning"><i class="fas fa-edit"></i></button>
+                    <?= $this->Form->end(); ?>
+                    &nbsp;&nbsp;
+                    <?= $this->Form->create($income,['url'=>['action'=>'delete']]) ?>
+                    <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                    <?= $this->Form->end() ?>
+                    </div>
+                       
+                    </td>
                 </tr>
             <?php endforeach; ?> 
         </tbody>
