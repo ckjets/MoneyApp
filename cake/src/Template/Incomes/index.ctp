@@ -38,7 +38,6 @@
         </div>
     </div>
 
-
 <div class="row">
     <table class="table table-hover">
         <thead>
@@ -62,15 +61,14 @@
                     
                     <td>
                     <div class="row">
-                    <?= $this->Form->create($entity,['url'=>['action'=>'edit']]) ?>
+                    <?= $this->Form->create($income,['url'=>['action'=>'edit']]) ?>
                     <button type="submit" class="btn btn-warning"><i class="fas fa-edit"></i></button>
                     <?= $this->Form->end(); ?>
                     &nbsp;&nbsp;
                     <?= $this->Form->create($income,['url'=>['action'=>'delete']]) ?>
                     <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i></button>
-                    <?= $this->Form->end() ?>
-                    </div>
-                       
+                    <?= $this->Form->end(); ?>
+                    </div>    
                     </td>
                 </tr>
             <?php endforeach; ?> 
