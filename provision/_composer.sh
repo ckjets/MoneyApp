@@ -1,7 +1,5 @@
 echo -------------------------------------------------
-echo
-echo                Composer
-echo
+echo Composer
 echo -------------------------------------------------
 
 php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"

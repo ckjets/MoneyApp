@@ -7,6 +7,7 @@ $ vagrant -v
 Vagrant 2.2.4
 $ VBoxManage -V
 6.0.4r128413
+$ vagrant plugin install vagrant-vbguest
 $ vagrant plugin list
 vagrant-vbguest (0.18.0, global)
 ```

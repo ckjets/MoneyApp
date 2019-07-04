@@ -1,7 +1,5 @@
 echo -------------------------------------------------
-echo
-echo                PHP7.3
-echo
+echo PHP7.3
 echo -------------------------------------------------
 
 yum -y install epel-release
@@ -13,9 +11,7 @@ yum -y install zip unzip git
 chgrp -R vagrant /var/lib/php
 
 echo -------------------------------------------------
-echo
-echo                Apache 起動
-echo
+echo  Apache起動
 echo -------------------------------------------------
 
 cp $BASE_DIR/apache/cake.conf /etc/httpd/conf.d

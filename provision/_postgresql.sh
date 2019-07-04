@@ -1,9 +1,7 @@
 #!/bin/bash -eu
 
 echo -------------------------------------------------
-echo
-echo                    PostgreSQL9.6
-echo
+echo PostgreSQL9.6
 echo -------------------------------------------------
 
 # リポジトリ追加
@@ -28,17 +26,13 @@ systemctl start postgresql-9.6
 systemctl enable postgresql-9.6
 
 echo -------------------------------------------------
-echo
-echo                    PostgreSQL9.6
-echo
+echo PostgreSQL9.6
 echo -------------------------------------------------
 
 psql --version
 
 echo -------------------------------------------------
-echo
-echo                    Create DB
-echo
+echo Create DB
 echo -------------------------------------------------
 
 psql -U postgres -c "create role testuser login password 'secret';";
