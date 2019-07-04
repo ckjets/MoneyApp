@@ -7,7 +7,7 @@ firewall-cmd --add-service=http --zone=public --permanent
 firewall-cmd --reload
 
 echo -------------------------------------------------
-echo SELinux 無効化
+echo SELinux無効化
 echo -------------------------------------------------
 
 setenforce 0
