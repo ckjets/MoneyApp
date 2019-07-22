@@ -14,7 +14,7 @@
 </div>
 
 <div class="row">
-  <button type="submit" class="btn-primary m-3">期間を指定して検索</button>
+ <p><a href="#ex2" rel="modal:open" type="submit" class="btn-primary m-3 p-3">期間を指定して検索</a></p>
 </div>
 
 <?= $this->Form->create($entity, ['url' => ['action' => 'add']]); ?>
@@ -113,15 +113,26 @@
 <p><a href="#ex1" rel="modal:open" class="btn btn-outline-warning"><i class="fas fa-edit"></i></a></p>
 
 
-<script>
-  $(function() {
+<div id="ex2" class="modal">
+  <div class="row" style="margin-top:100px;">
+  <div class="row">
+  <h1>日付を指定する</h1>
+  </div>
+     <div class="col-6">
+     <p>FROM</p>
+       <input type="date">
+     </div>
+     <div class="col-6">
+     <p>TO</p>
+      <input type="date">
+     </div>
+         <div class="col-2">
+      <a href="#" rel="modal:close" class="btn btn-outline-danger">Close</a>
+    </div>
+    <div class="col-2">
+      <a href="#" rel="modal:close" class="btn btn-outline-primary">Submit</a>
+    </div>
+  </div>
+</div>
 
-    //
-    console.log('HELLO');
-    const h1 = document.querySelector('h1');
-    const id = document.
-    const copy = h1.cloneNode(true);
-    console.log(copy);
 
-  });
-</script>
