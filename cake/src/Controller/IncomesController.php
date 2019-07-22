@@ -72,7 +72,7 @@ class IncomesController extends Controller
         $income = $this->Incomes->get($id);
 
         if ($this->Incomes->save($income)) {
-            $this->Flash->success(__('収入が削除されました。'));
+            
             return $this->redirect(['action' => 'index']);
           }
 
