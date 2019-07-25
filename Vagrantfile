@@ -4,6 +4,7 @@ Vagrant.configure("2") do |config|
   config.vm.synced_folder ".", "/app"
   # cfg.vm.provision :shell, path: "bootstrap.sh"
   config.vm.provision :install, type: "shell", path: "provision/install.sh"
+    config.vm.provision :vagrant_user, type: "shell", path: "provision/_composer.sh", privileged: false
   config.vm.provision :vagrant_user, type: "shell", path: "provision/vagrant_user.sh", privileged: false
 
   config.vm.provider :virtualbox do |vb|
