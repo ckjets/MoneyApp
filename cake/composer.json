@@ -49,6 +49,9 @@
     },
     "prefer-stable": true,
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "process-timeout": 2000,
+        "preferred-install": "dist",
+        "github-protocols": ["https"]
     }
 }
