@@ -33,20 +33,14 @@ class IncomesController extends Controller
 
     public function add()
     {
-
-
         if ($this->request->is('Post')) {
             $income = $this->Incomes->newEntity($this->request->getData());
-
             if ($this->Incomes->save($income)) {
-
-                $this->Flash->success(__('収入が登録されました。'));
-
+                //$this->Flash->success(__('収入が登録されました。'));
                 $this->redirect(['action' => 'index']);
             } else {
                 $this->Flash->error(__('投稿エラー'));
             }
-
             $this->set('entity', $income);
         }
     }
@@ -55,27 +49,23 @@ class IncomesController extends Controller
     {
       // POSTとPUTメソッドを許可
       $this->request->allowMethod(['post','put']);
-    
       $income = $this->Incomes->get($id);
-    
       // 削除成功
       if ($this->Incomes->delete($income)) {
-        $this->Flash->success(__('収入が削除されました。'));
+        // $this->Flash->success(__('収入が削除されました。'));
         return $this->redirect(['action' => 'index']);
       }
     }
 
-    public function edit($id) {
+    public function edit($id = null) {
 
-        $this->request->allowMethod(['post','put']);
-        
-        $income = $this->Incomes->get($id);
+        if($this->request->is('post')) {
+            $postData = $this->request->getData();
+            $income = $this->Incomes->patchEntity($income, $postData);
+        }
 
-        if ($this->Incomes->save($income)) {
-            
+        if ($this->Incomes->save($postData)) {
             return $this->redirect(['action' => 'index']);
           }
-
-
     }
 }
