@@ -67,6 +67,8 @@ Router::scope('/', function (RouteBuilder $routes) {
 
     $routes->connect('/incomes', ['controller' => 'Incomes', 'action' => 'index'])->setMethods(['GET']);
     $routes->connect('/incomes', ['controller' => 'Incomes', 'action' => 'add'])->setMethods(['POST']);
+
+    $routes->connect('/incomes/edit/{$id}', ['controller' => 'Incomes', 'action' => 'edit'])->setMethods(['POST']);
     // $routes->connect('/incomes', ['controller' => 'Reasons', 'action' => 'index']);
 
     $routes->connect('/spending', ['controller' => 'Spending', 'action' => 'index']);
