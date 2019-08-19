@@ -52,5 +52,20 @@ class SpendingController extends Controller
     }
 
     public function edit()
-    { }
+    {
+        if ($this->request->is('post')) {
+            $postData = $this->request->getData();
+            $spending = $this->Spending->get($postData['id']);
+
+            $spending = $this->Spending->patchEntity($spending, $postData);
+            if ($this->Spending->save($spending)) {
+                $this->Flash->success(__('更新しました'));
+                return $this->redirect(['action' => 'index']);
+            }
+            $this->Flash->error(__('The article could not be saved. Please, try again.'));
+        }
+
+        $this->set(compact('income'));
+        $this->render('edit');
+    }
 }

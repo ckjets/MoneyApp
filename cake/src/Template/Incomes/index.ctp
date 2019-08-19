@@ -21,11 +21,9 @@
     display: none;
   }
 
-
   #formmb select {
     display: none;
   }
-
 
   #formmb div .col {
     display: none;
@@ -116,6 +114,15 @@
   </div>
 </div>
 
+    <div class="col">
+      <div id="submitbutton">
+        <button type="submit" class="btn btn-outline-warning" style="margin-top:30px;"><a>収入を記録</a></button>
+      </div>
+      <?= $this->Form->end(); ?>
+    </div>
+  </div>
+</div>
+
 <!-- 768px以下は、モーダルでレコード追加 -->
 <div id="submitmb">
   <p><a href="#ex3" rel="modal:open" class="btn btn-warning">収入を記録</a></p>
@@ -158,20 +165,6 @@
 </div>
 <!-- ここまで -->
 
-  <div class="col">
-    <?= $this->Form->label('収入理由') ?>
-    <select class="padding:0" name="reason_id">
-      <?php foreach ($reasons as $reason) : ?>
-        <option style="fontsize:5px" value=<?= $reason->id ?>><?= $reason->name ?></option>
-      <?php endforeach; ?>
-    </select>
-  </div>
-
-  <div class="col">
-    <button type="submit" class="btn btn-outline-warning" style="margin-top:30px;">収入を記録</button>
-    <?= $this->Form->end(); ?>
-  </div>
-</div>
 
 <div class="row">
   <table class="table table-hover">
