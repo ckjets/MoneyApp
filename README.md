@@ -7,8 +7,17 @@ $ vagrant -v
 Vagrant 2.2.4
 $ VBoxManage -V
 6.0.4r128413
+$ vagrant plugin install vagrant-vbguest
 $ vagrant plugin list
 vagrant-vbguest (0.18.0, global)
+```
+
+以下ホストOSで実行
+```
+sudo vi /etc/hosts
+
+# 以下追加
+192.168.33.10 www.moneyapp.com
 ```
 
 ```bash:
@@ -18,4 +27,5 @@ $ vagrant up
 $ vagrant ssh
 ```
 
-http://192.168.33.10
+- IP: http://192.168.33.10
+- ドメイン: http://www.moneyapp.com

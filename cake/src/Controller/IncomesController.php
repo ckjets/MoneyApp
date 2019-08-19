@@ -5,7 +5,6 @@ namespace App\Controller;
 use Cake\Controller\Controller;
 use Cake\Event\Event;
 use Cake\ORM\TableRegistry;
-use Cake\Routing\Router;
 
 class IncomesController extends Controller
 {
@@ -18,7 +17,6 @@ class IncomesController extends Controller
 
 
     }
-    public $components = array ('Flash');
     
     public function index()
     {
@@ -42,7 +40,7 @@ class IncomesController extends Controller
 
             if ($this->Incomes->save($income)) {
 
-                $this->Flash->success(__('収入が保存されました。',['element'=>'flash']));
+                $this->Flash->success(__('収入が登録されました。'));
 
                 $this->redirect(['action' => 'index']);
             } else {
@@ -51,5 +49,33 @@ class IncomesController extends Controller
 
             $this->set('entity', $income);
         }
+    }
+
+    public function delete($id)
+    {
+      // POSTとPUTメソッドを許可
+      $this->request->allowMethod(['post','put']);
+    
+      $income = $this->Incomes->get($id);
+    
+      // 削除成功
+      if ($this->Incomes->delete($income)) {
+        $this->Flash->success(__('収入が削除されました。'));
+        return $this->redirect(['action' => 'index']);
+      }
+    }
+
+    public function edit($id) {
+
+        $this->request->allowMethod(['post','put']);
+        
+        $income = $this->Incomes->get($id);
+
+        if ($this->Incomes->save($income)) {
+            
+            return $this->redirect(['action' => 'index']);
+          }
+
+
     }
 }

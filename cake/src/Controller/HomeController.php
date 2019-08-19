@@ -9,18 +9,34 @@ class HomeController extends Controller
 {
 
     public function initialize()
-    { }
+    { 
+
+    }
 
     public function index()
     {
 
-        $incomes = TableRegistry::get('incomes');
+        //収入のトータル
+        $query = TableRegistry::get('Incomes')->find();
+        $incomes = $query->select(['sum' => $query->func()->sum('price')]);
 
-        $incomes = $incomes->find()->all();
-        // $incomes
-        //     ->select(['price' =>  $incomes->func()->sum('price')])
-        //     ->all();
+        foreach($incomes as $income){
+            $income = $income['sum'];
+        }
+        $this->set('income',$income);
 
-        $this->set('incomes',$incomes);
+        //支出のトータル
+        $query = TableRegistry::get('Spending')->find();
+        $spendings = $query->select(['sum' => $query->func()->sum('price')]);
+
+        foreach($spendings as $spending){
+            $spending = $spending['sum'];
+        }
+        $this->set('spending',$spending);
+
+
+
+
+
     }
 }

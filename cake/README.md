@@ -4,7 +4,7 @@
 
 |レイヤー|ミドルウェア|バージョン|
 |---|---|---|
-|DB|PostgreSQL|9.2.24|
+|DB|PostgreSQL|9.6|
 |Httpd|Apache|2.4|
 |CGI|PHP|7.3|
 
@@ -14,10 +14,6 @@
 |---|---|---|
 |PHP|CakePHP|3.7|
 |javascript|jQuery|-|
-
-## インフラ環境
-インフラ環境はVagrant(CentOS7)<br>
-環境構築の手順を記したQiita:https://qiita.com/ckjets/items/f4793b83b7ae67f5d379<br>
 
 ## 要件
 
