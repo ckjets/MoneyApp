@@ -21,11 +21,9 @@
     display: none;
   }
 
-
   #formmb select {
     display: none;
   }
-
 
   #formmb div .col {
     display: none;
@@ -106,6 +104,15 @@
         <?php endforeach; ?>
       </select>
     </div>
+
+    <div class="col">
+      <div id="submitbutton">
+        <button type="submit" class="btn btn-outline-warning" style="margin-top:30px;"><a>収入を記録</a></button>
+      </div>
+      <?= $this->Form->end(); ?>
+    </div>
+  </div>
+</div>
 
     <div class="col">
       <div id="submitbutton">
