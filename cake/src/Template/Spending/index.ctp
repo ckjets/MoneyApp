@@ -1,7 +1,79 @@
 <style>
   ul>li {
     display: inline;
+  }
 
+  .modal a.close-modal {
+    top: -1.5px;
+    right: -1.5px;
+  }
+
+  #submitmb p {
+    display: none;
+  }
+
+  #formmb input[type="date"] {
+    display: none;
+  }
+
+
+  #formmb input[type="text"] {
+    display: none;
+  }
+
+  #formmb select {
+    display: none;
+  }
+
+  #formmb div .col {
+    display: none;
+  }
+
+  #formmb label {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    #submitbutton button {
+      margin-left: 100px;
+    }
+
+    .pagination ul>li {
+      margin-left: 100px;
+
+    }
+
+    .paginater {
+      margin-left: 100px;
+    }
+
+    #formpc input[type="date"] {
+      display: none;
+    }
+
+
+    #formpc input[type="text"] {
+      display: none;
+    }
+
+
+    #formpc select {
+      display: none;
+    }
+
+
+    #formpc div .col {
+      display: none;
+    }
+
+    #formpc label {
+      display: none;
+    }
+
+    #submitmb p {
+      display: block;
+      padding-bottom: 30px;
+    }
   }
 </style>
 
@@ -12,6 +84,7 @@
   <img src="../img/spending.png" alt="">
 </div>
 
+<div id="formpc">
 <?= $this->Form->create($entity, ['url' => ['action' => 'add']]); ?>
 <div class="row">
   <div class="col">
@@ -31,7 +104,45 @@
   </div>
 </div>
 <?= $this->Form->end(); ?>
+</div>
 
+<!-- 768px以下は、モーダルでレコード追加 -->
+<div id="submitmb">
+  <p><a href="#ex3" rel="modal:open" class="btn btn-primary">支出を記録</a></p>
+</div>
+
+<!-- 編集モーダル実装 -->
+<div id="formmb">
+  <div id="ex3" class="modal" style="height:70%">
+    <div class="row justify-content-center" style="margin-top:30px">
+      <?= $this->Form->create($entity, ['url' => ['action' => 'add']]); ?>
+
+      <div class="row justify-content-center">
+        <?= $this->Form->label('支出日付') ?>
+        <input type="date" name="date" required="required">
+      </div>
+
+      <div class="row justify-content-center">
+        <?= $this->Form->label('支出額') ?>
+        <input type="text" name="price" required="required">
+      </div>
+
+      <div class="row justify-content-center">
+      <?= $this->Form->label('用途') ?>
+    <input type="text" name="description" required="required">
+      </div>
+
+      <div class="row justify-content-center">
+        <div id="submitbutton">
+          <button type="submit" class="btn btn-outline-primary" style="margin-top:30px; margin-left:0px;"><a>支出を記録</a></button>
+        </div>
+      </div>
+      <?= $this->Form->end(); ?>
+
+    </div>
+  </div>
+</div>
+<!-- ここまで -->
 
 <div class="row">
   <table class="table table-hover">

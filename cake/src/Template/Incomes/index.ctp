@@ -114,15 +114,6 @@
   </div>
 </div>
 
-    <div class="col">
-      <div id="submitbutton">
-        <button type="submit" class="btn btn-outline-warning" style="margin-top:30px;"><a>収入を記録</a></button>
-      </div>
-      <?= $this->Form->end(); ?>
-    </div>
-  </div>
-</div>
-
 <!-- 768px以下は、モーダルでレコード追加 -->
 <div id="submitmb">
   <p><a href="#ex3" rel="modal:open" class="btn btn-warning">収入を記録</a></p>
@@ -164,7 +155,6 @@
   </div>
 </div>
 <!-- ここまで -->
-
 
 <div class="row">
   <table class="table table-hover">
