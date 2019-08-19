@@ -524,9 +524,9 @@ table td {
 }
 
 /* add */
-@media (min-width: 768px) {
+@media (max-width: 768px) {
 table tr th, table tr td {
     color: #222;
-    font-size: 10px;
+    font-size: 11px;
 }
 }

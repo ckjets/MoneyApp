@@ -1,5 +1,4 @@
 <style>
-  /* あとでcssにかく */
   ul>li {
     display: inline;
 

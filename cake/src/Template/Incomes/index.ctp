@@ -1,5 +1,4 @@
 <style>
-  /* あとでcssにかく */
   ul>li {
     display: inline;
   }
@@ -87,10 +86,6 @@
   <img src="../img/income2.png" alt="">
 </div>
 
-<div class="row">
-  <p><a href="#ex2" rel="modal:open" type="submit" class="btn-primary m-3 p-3">期間を指定して検索</a></p>
-</div>
-
 <div id="formpc">
   <?= $this->Form->create($entity, ['url' => ['action' => 'add']]); ?>
   <div class="row">
@@ -120,45 +115,49 @@
     </div>
   </div>
 </div>
+
 <!-- 768px以下は、モーダルでレコード追加 -->
 <div id="submitmb">
   <p><a href="#ex3" rel="modal:open" class="btn btn-warning">収入を記録</a></p>
-  <!-- 編集モーダル実装 -->
-  <div id="formmb">
-    <div id="ex3" class="modal" style="height:100%">
-      <div class="row justify-content-center" style="margin-top:30px">
-        <h2>収入を追加する</h2>
-        <?= $this->Form->create($entity, ['url' => ['action' => 'add']]); ?>
-        <div class="row">
-          <?= $this->Form->label('収入日付') ?>
-          <input type="date" name="date" required="required">
-        </div>
-        <div class="row">
-          <?= $this->Form->label('収入額') ?>
-          <input type="text" name="price" required="required">
-        </div>
+</div>
 
-        <div class="row">
-          <?= $this->Form->label('収入理由') ?>
-          <select class="padding:0" name="reason_id">
-            <?php foreach ($reasons as $reason) : ?>
-              <option style="fontsize:5px" value=<?= $reason->id ?>><?= $reason->name ?></option>
-            <?php endforeach; ?>
-          </select>
-        </div>
+<!-- 編集モーダル実装 -->
+<div id="formmb">
+  <div id="ex3" class="modal" style="height:70%">
+    <div class="row justify-content-center" style="margin-top:30px">
+      <?= $this->Form->create($entity, ['url' => ['action' => 'add']]); ?>
 
-        <div class="row">
-          <div id="submitbutton">
-            <button type="submit" class="btn btn-outline-warning" style="margin-top:30px;"><a>収入を記録</a></button>
-          </div>
-          <?= $this->Form->end(); ?>
+      <div class="row justify-content-center">
+        <?= $this->Form->label('収入日付') ?>
+        <input type="date" name="date" required="required">
+      </div>
+
+      <div class="row justify-content-center">
+        <?= $this->Form->label('収入額') ?>
+        <input type="text" name="price" required="required">
+      </div>
+
+      <div class="row justify-content-center">
+        <?= $this->Form->label('収入理由') ?>
+        <select class="padding:0" name="reason_id">
+          <?php foreach ($reasons as $reason) : ?>
+            <option style="fontsize:5px" value=<?= $reason->id ?>><?= $reason->name ?></option>
+          <?php endforeach; ?>
+        </select>
+      </div>
+
+      <div class="row justify-content-center">
+        <div id="submitbutton">
+          <button type="submit" class="btn btn-outline-warning" style="margin-top:30px; margin-left:0px;"><a>収入を記録</a></button>
         </div>
       </div>
+      <?= $this->Form->end(); ?>
+
     </div>
   </div>
 </div>
 <!-- ここまで -->
-</div>
+
 
 <div class="row">
   <table class="table table-hover">
@@ -245,27 +244,5 @@
     <ul class="pagination">
       <p><?= $this->Paginator->numbers() ?></p>
     </ul>
-  </div>
-</div>
-
-<div id="ex2" class="modal">
-  <div class="row" style="margin-top:100px;">
-    <div class="row">
-      <h1>日付を指定する</h1>
-    </div>
-    <div class="col-6">
-      <p>FROM</p>
-      <input type="date">
-    </div>
-    <div class="col-6">
-      <p>TO</p>
-      <input type="date">
-    </div>
-    <div class="col-2">
-      <a href="#" rel="modal:close" class="btn btn-outline-danger">Close</a>
-    </div>
-    <div class="col-2">
-      <a href="#" rel="modal:close" class="btn btn-outline-primary">Submit</a>
-    </div>
   </div>
 </div>
