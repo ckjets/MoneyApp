@@ -12,6 +12,6 @@ echo プロジェクト設定
 echo -------------------------------------------------
 cd /app/cake
 composer update
-composer install
+composer install --no-plugins
 bin/cake migrations migrate
 bin/cake migrations seed
