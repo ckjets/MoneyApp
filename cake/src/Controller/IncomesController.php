@@ -34,10 +34,10 @@ class IncomesController extends Controller
         if ($this->request->is('Post')) {
             $income = $this->Incomes->newEntity($this->request->getData());
             if ($this->Incomes->save($income)) {
-                $this->Flash->success(__('収入が登録されました。'));
+                // $this->Flash->success(__('収入が登録されました。'));
                 $this->redirect(['action' => 'index']);
             } else {
-                $this->Flash->error(__('投稿エラー'));
+                // $this->Flash->error(__('投稿エラー'));
             }
             $this->set('entity', $income);
         }
@@ -52,7 +52,7 @@ class IncomesController extends Controller
 
         // 削除成功
         if ($this->Incomes->delete($income)) {
-            $this->Flash->success(__('収入が削除されました。'));
+            // $this->Flash->success(__('収入が削除されました。'));
             return $this->redirect(['action' => 'index']);
         }
     }
@@ -65,10 +65,10 @@ class IncomesController extends Controller
 
             $income = $this->Incomes->patchEntity($income, $postData);
             if ($this->Incomes->save($income)) {
-                $this->Flash->success(__('更新しました'));
+                // $this->Flash->success(__('更新しました'));
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The article could not be saved. Please, try again.'));
+            // $this->Flash->error(__('更新に失敗しました'));
         }
 
         $this->set(compact('income'));

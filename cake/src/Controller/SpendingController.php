@@ -28,7 +28,7 @@ class SpendingController extends Controller
             $spending = $this->Spending->newEntity($this->request->getData());
 
             if ($this->Spending->save($spending)) {
-                $this->Flash->success(__('支出が登録されました。'));
+                // $this->Flash->success(__('支出が登録されました。'));
                 $this->redirect(['action' => 'index']);
             }
 
@@ -46,7 +46,7 @@ class SpendingController extends Controller
 
         // 削除成功
         if ($this->Spending->delete($spending)) {
-            $this->Flash->success(__('支出が削除されました。'));
+            // $this->Flash->success(__('支出が削除されました。'));
             return $this->redirect(['action' => 'index']);
         }
     }
@@ -59,10 +59,10 @@ class SpendingController extends Controller
 
             $spending = $this->Spending->patchEntity($spending, $postData);
             if ($this->Spending->save($spending)) {
-                $this->Flash->success(__('更新しました'));
+                // $this->Flash->success(__('更新しました'));
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The article could not be saved. Please, try again.'));
+            // $this->Flash->error(__('更新に失敗しました'));
         }
 
         $this->set(compact('income'));
